@@ -18,7 +18,8 @@
         "triggerTimes": {
           "item": [
             {
-              "mode": "everyMinute"
+              "mode": "custom",
+              "cronExpression": "0,*/10 12-13,19-20 * * *"
             }
           ]
         }
@@ -82,6 +83,26 @@
           "name": "Telegram account"
         }
       }
+    },
+    {
+      "parameters": {
+        "chatId": "349414526",
+        "text": "Gazzo is closed!!!",
+        "additionalFields": {}
+      },
+      "name": "Telegram1",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [
+        1320,
+        400
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "2",
+          "name": "Telegram account"
+        }
+      }
     }
   ],
   "connections": {
@@ -115,12 +136,19 @@
             "type": "main",
             "index": 0
           }
+        ],
+        [
+          {
+            "node": "Telegram1",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     }
   },
   "createdAt": "2022-03-28T11:37:27.117Z",
-  "updatedAt": "2022-03-28T11:37:27.318Z",
+  "updatedAt": "2022-03-28T12:30:11.545Z",
   "settings": {},
   "staticData": null
 }
