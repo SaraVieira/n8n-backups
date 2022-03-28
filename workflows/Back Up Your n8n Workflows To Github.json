@@ -1,7 +1,7 @@
 {
   "id": 1,
   "name": "Back Up Your n8n Workflows To Github",
-  "active": false,
+  "active": true,
   "nodes": [
     {
       "parameters": {},
@@ -85,8 +85,8 @@
       "parameters": {
         "resource": "file",
         "operation": "edit",
-        "owner": "={{$node[\"Globals\"].json[\"repo\"][\"owner\"]}}",
-        "repository": "={{$node[\"Globals\"].json[\"repo\"][\"name\"]}}",
+        "owner": "SaraVieira",
+        "repository": "n8n-backups",
         "filePath": "={{$node[\"Globals\"].json[\"repo\"][\"path\"]}}{{JSON.parse($node[\"Move Binary Data\"].json[\"data\"]).name}}.json",
         "fileContent": "={{$node[\"isDiffOrNew\"].json[\"n8n_data_stringy\"]}}",
         "commitMessage": "=[N8N Backup] {{JSON.parse($node[\"Move Binary Data\"].json[\"data\"]).name}}.json ({{$json[\"github_status\"]}})"
@@ -108,8 +108,8 @@
     {
       "parameters": {
         "resource": "file",
-        "owner": "={{$node[\"Globals\"].json[\"repo\"][\"owner\"]}}",
-        "repository": "={{$node[\"Globals\"].json[\"repo\"][\"name\"]}}",
+        "owner": "SaraVieira",
+        "repository": "n8n-backups",
         "filePath": "={{$node[\"Globals\"].json[\"repo\"][\"path\"]}}{{JSON.parse($node[\"Move Binary Data\"].json[\"data\"]).name}}.json",
         "fileContent": "={{$node[\"isDiffOrNew\"].json[\"n8n_data_stringy\"]}}",
         "commitMessage": "=[N8N Backup] {{JSON.parse($node[\"Move Binary Data\"].json[\"data\"]).name}}.json ({{$json[\"github_status\"]}})"
@@ -268,8 +268,8 @@
       "parameters": {
         "resource": "file",
         "operation": "get",
-        "owner": "={{$node[\"Globals\"].json[\"repo\"][\"owner\"]}}",
-        "repository": "={{$node[\"Globals\"].json[\"repo\"][\"name\"]}}",
+        "owner": "SaraVieira",
+        "repository": "n8n-backups",
         "filePath": "={{$node[\"Globals\"].json[\"repo\"][\"path\"]}}{{JSON.parse($json[\"data\"]).name}}.json",
         "asBinaryProperty": false,
         "additionalParameters": {}
@@ -511,7 +511,7 @@
     }
   },
   "createdAt": "2022-03-28T09:44:37.493Z",
-  "updatedAt": "2022-03-28T09:44:37.493Z",
+  "updatedAt": "2022-03-28T09:49:04.629Z",
   "settings": {},
   "staticData": null
 }
